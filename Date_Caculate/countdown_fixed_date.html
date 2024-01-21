@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<h1>Target Date Countdown</h1>
+
+<p id="targetDateDisplay"></p> <!-- Element to display the target date -->
+<p id="result"></p>
+
+<script>
+    // Update time difference every second
+    var intervalId;
+
+    // Set the target date to a fixed value (2024-01-31T18:45)
+    var targetDate = new Date('2024-02-08T18:00');
+
+    // Display the target date on the page load
+    displayTargetDate(targetDate);
+
+    // Start countdown immediately
+    calculateDateDifference();
+
+    function displayTargetDate(targetDate) {
+        var targetDateDisplay = document.getElementById('targetDateDisplay');
+        var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
+        var formattedTargetDate = targetDate.toLocaleDateString('en-US', options);
+        targetDateDisplay.textContent = 'Target Date: ' + formattedTargetDate;
+    }
+
+    function calculateDateDifference() {
+        var resultElement = document.getElementById('result');
+
+        // Initial calculation
+        updateDifference(targetDate, resultElement);
+
+        // Set interval to update every second
+        intervalId = setInterval(function() {
+            updateDifference(targetDate, resultElement);
+        }, 1000);
+    }
+
+    function updateDifference(targetDate, resultElement) {
+        var currentDate = new Date();
+        var difference = Math.abs(targetDate - currentDate) / 1000; // Convert milliseconds to seconds
+
+        var days = Math.floor(difference / (24 * 60 * 60));
+        difference -= days * (24 * 60 * 60);
+
+        var hours = Math.floor(difference / (60 * 60));
+        difference -= hours * (60 * 60);
+
+        var minutes = Math.floor(difference / 60);
+        difference -= minutes * 60;
+
+        var seconds = Math.floor(difference);
+
+        resultElement.textContent = 'Time difference: ' + days + ' days ' + hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds';
+    }
+</script>
+
+</body>
+</html>

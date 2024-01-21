@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Chooser</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<h1>Website Chooser</h1>
+
+<ul>
+	<li><button onclick="visitWebsite('countdown_fixed_date.html')">Countdown Fixed Date</button></li>
+    <li><button onclick="visitWebsite('countdown_timer.html')">Countdown Timer</button></li>
+    <li><button onclick="visitWebsite('date_difference_calculator.html')">Date Difference Calculator</button></li>
+</ul>
+
+<script>
+    function visitWebsite(url) {
+        window.location.href = url;
+    }
+</script>
+
+</body>
+</html>

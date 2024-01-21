@@ -1,0 +1,47 @@
+body {
+    margin-top: 12%;
+    font-family: Impact, Charcoal, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    display: block; /* 让li元素以块级显示，垂直排列 */
+    margin: 30px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+form {
+	margin: 20px auto;
+	max-width: 300px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+input {
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+
+#result {
+	margin-top: 20px;
+}
+
+/* Add your specific styles for countdown_timer.html and date_difference_calculator.html below */
